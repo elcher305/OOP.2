@@ -7,4 +7,3 @@ from .models import Application
 admin.site.register(AdvUser)
 admin.site.register(Categories)
 admin.site.register(Application)
-

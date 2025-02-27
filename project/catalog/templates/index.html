@@ -7,9 +7,9 @@
     {% bootstrap_css %} {% bootstrap_javascript jquery='slim' %}
     <title>{% block title %} Главная {% endblock %}</title>
 </head>
-<body style="background-color: 	#FFFAF0">
+<body style="background-color: 	#FFFF">
 <div class="container-fluid">
-    <div  style="background-color: ##FFFAF0;" class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 border-bottom box-shadow">
+    <div  style="background-color: #FFFF" class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 border-bottom box-shadow">
         <h1 class="mr-md-auto p-2">Design.pro</h1>
         {% if user.is_authenticated %}
         <form class="p-2 text-dark" action="{% url 'catalog:profile' %}" method="post">

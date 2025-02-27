@@ -95,14 +95,14 @@ class RegisterUserForm(forms.ModelForm):
 
 class ApplicationForms(forms.ModelForm):
     name = forms.CharField(required=True, label='Название')
-    description = forms.CharField(label='Описание',  widget=forms.Textarea, max_length=1000)
+    description = forms.CharField(label='Описание', widget=forms.Textarea, max_length=1000)
     LOAN_STATUS = (
         ('n', 'Новая'),
         ('o', 'Принята в работу'),
         ('d', 'Выполнена'),
 
     )
-    categories = forms.ChoiceField(label='Категория', max_length=100, choices=LOAN_STATUS)
+    categories = forms.ChoiceField(label='Категория', choices=LOAN_STATUS)
     photo = forms.FileField(label='Фото')
 
     class Meta:

@@ -1,11 +1,11 @@
 from django.urls import path
-from .import views
+from . import views
 from .views import BBLoginView
 from .views import profile
 from .views import BBLogoutView
 from .views import RegisterDoneView
 from .views import RegisterUserView
-
+from django.shortcuts import render
 app_name = 'catalog'
 
 urlpatterns = [
@@ -18,3 +18,6 @@ urlpatterns = [
 
 ]
 
+
+def index(request):
+    return render(request, 'catalog/index.html')
