@@ -5,35 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a40cc2a-6e21-4290-95c9-4bef82b7d4c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ООП.2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/migrations/0002_advuser_fio.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/migrations/0003_remove_advuser_fio_advuser_patronymic_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/migrations/0004_tarif_remove_advuser_is_activated.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/migrations/0005_delete_tarif.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/migrations/0006_categories_application.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ООП.2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/catalog/templates/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/catalog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/templates/registration/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/templates/registration/logout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/templates/registration/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/templates/registration/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/templates/registration/register_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/templates/registration/register_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/templates/registration/register_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/templates/registration/register_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/catalog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/design/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/design/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/design/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/design/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/design/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/design/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/design/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/design/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/manage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +25,7 @@
       <list>
         <option value="HTML File" />
         <option value="Python Script" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -63,23 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/oop-2-second-dot-first&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.python.django.customization.DjangoModulesConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/User/Desktop/oop-2-second-dot-first",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.intellij.python.django.customization.DjangoModulesConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\ООП.2\project\catalog\migrations" />
@@ -127,7 +107,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740667485817</updated>
-      <workItem from="1740667487202" duration="2939000" />
+      <workItem from="1740667487202" duration="6887000" />
+      <workItem from="1740713802912" duration="1492000" />
     </task>
     <servers />
   </component>
