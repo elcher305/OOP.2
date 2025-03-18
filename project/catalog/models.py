@@ -1,36 +1,30 @@
+from django.contrib.auth.models import AdvUser
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 
-
-class AdvUser(AbstractUser):
-   first_name = models.CharField(max_length=100, blank=True, verbose_name='Имя')
-   patronymic = models.CharField(max_length=100, blank=True, verbose_name='Отчество')
-   last_name = models.CharField(max_length=100, blank=True, verbose_name='Фамилия')
-
-   class Meta(AbstractUser.Meta):
-       pass
-
-
-class Categories(models.Model):
-    name = models.CharField(max_length=200, help_text="Введите название категории")
+class CustomUser(AdvUser):
+    full_name = models.CharField(max_length=100, verbose_name="ФИО")
+    email = models.EmailField(unique=True, verbose_name="Email")
+    agreement = models.BooleanField(default=False, verbose_name="Согласие на обработку персональных данных")
 
     def __str__(self):
-        return self.name
-
+        return self.username
 
 class Application(models.Model):
-    name = models.CharField(max_length=100, blank=True, verbose_name='Название')
-    description = models.TextField(max_length=1000, help_text="Описание")
-    categories = models.ManyToManyField(Categories, help_text="Выберите категорию")
-    photo = models.FileField(upload_to ='uploads/')
+    STATUS_CHOICES = [
+        ('new', 'Новая'),
+        ('in_progress', 'Принято в работу'),
+        ('completed', 'Выполнено'),
+    ]
 
-    LOAN_STATUS = (
-        ('n', 'Новая'),
-        ('o', 'Принята в работу'),
-        ('d', 'Выполнена'),
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, verbose_name="Пользователь")
+    title = models.CharField(max_length=100, verbose_name="Название")
+    description = models.TextField(verbose_name="Описание")
+    category = models.CharField(max_length=50, verbose_name="Категория")
+    photo = models.ImageField(upload_to='applications/', verbose_name="Фото помещения")
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='new', verbose_name="Статус")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Временная метка")
 
-    )
-
-    status = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='n', help_text='Статус заявки')
+    def __str__(self):
+        return self.title
 
 

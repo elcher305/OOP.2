@@ -1,0 +1,19 @@
+<h1>Главная страница</h1>
+{% if user.is_authenticated %}
+    <p>Добро пожаловать, {{ user.username }}!</p>
+    <a href="{% url 'logout' %}">Выйти</a>
+{% else %}
+    <a href="{% url 'login' %}">Войти</a> | <a href="{% url 'register' %}">Зарегистрироваться</a>
+{% endif %}
+
+<h2>Последние выполненные заявки</h2>
+<ul>
+    {% for application in completed_applications %}
+        <li>
+            <strong>{{ application.title }}</strong> ({{ application.category }})<br>
+            <img src="{{ application.photo.url }}" alt="{{ application.title }}" width="200">
+        </li>
+    {% endfor %}
+</ul>
+
+<p>Заявок в работе: {{ in_progress_count }}</p>

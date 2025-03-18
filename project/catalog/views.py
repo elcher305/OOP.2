@@ -1,62 +1,37 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.views import LoginView
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LogoutView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import AdvUser
-from django.views.generic import CreateView
-from .forms import RegisterUserForm
-from django.urls import reverse_lazy
-from django.views.generic.base import TemplateView
-from django.core.mail import send_mail
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
+from .forms import RegisterForm, LoginForm
+from .models import Application
 
+def home(request):
+    completed_applications = Application.objects.filter(status='completed').order_by('-created_at')[:4]
+    in_progress_count = Application.objects.filter(status='in_progress').count()
+    return render(request, 'accounts/home.html', {
+        'completed_applications': completed_applications,
+        'in_progress_count': in_progress_count,
+    })
 
-def index(request):
-    return render(request, 'index.html')
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = RegisterForm()
+    return render(request, 'accounts/register.html', {'form': form})
 
-
-class BBLoginView(LoginView):
-    template_name = 'registration/login.html'
-
-
-@login_required
-def profile(request):
-    return render(request, 'registration/profile.html')
-
-
-class BBLogoutView(LoginRequiredMixin, LogoutView):
-    template_name = 'registration/logout.html'
-
-
-class RegisterUserView(CreateView):
-    model = AdvUser
-    template_name = 'registration/register_user.html'
-    form_class = RegisterUserForm
-    success_url = reverse_lazy('catalog:register_done')
-
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        user = self.object
-        tariff = form.cleaned_data.get('tariff')
-
-        subject = 'Регистрация на сайте'
-        message = f'Спасибо за регистрацию! Вы выбрали тариф: {dict(form.TARIFF_CHOICES)[tariff]}'
-        from_email = 'malenkoer@mail.ru'
-        recipient_list = [user.email]
-        send_mail(subject, message, from_email, recipient_list)
-
-        try:
-            send_mail(subject, message, from_email, recipient_list)
-        except Exception as e:
-            print(f'Email sending failed: {e}')
-
-        login(self.request, user)
-        return response
-
-
-
-class RegisterDoneView(TemplateView):
-    template_name = 'registration/register_done.html'
-
-
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+    else:
+        form = LoginForm()
+    return render(request, 'accounts/login.html', {'form': form})
